@@ -3,6 +3,7 @@ module Merb::Helpers::SexyForm
     class Base < Merb::Helpers::Form::Builder::ResourcefulFormWithErrors
       def form(attrs = {}, &blk)
         ul_options = attrs.delete(:ul)
+        add_css_class(attrs, "sexy")
         super(attrs) do
           captured = @origin.capture(&blk)
           tag(:ul, captured, ul_options)
@@ -59,11 +60,15 @@ module Merb::Helpers::SexyForm
       end
 
       def unbound_check_box(attrs = {})
-        wrap_with_container(attrs.merge(:label => nil), super(clean_args!(attrs)))
+        update_label_options(attrs, "radio")
+        wrap_with_container(attrs.merge(:label => nil),
+            super(clean_args!(attrs)))
       end
 
       def unbound_radio_button(attrs = {})
-        wrap_with_container(attrs.merge(:label => nil), super(clean_args!(attrs)))
+        update_label_options(attrs, "radio")
+        wrap_with_container(attrs.merge(:label => nil),
+            super(clean_args!(attrs)))
       end
 
       def bound_radio_group(method, arr, global_attrs = {})
@@ -93,6 +98,16 @@ module Merb::Helpers::SexyForm
       end
 
       private
+      def update_label_options(attrs, type)
+        case type
+        when "radio", "checkbox"
+          if attrs[:label] && !attrs[:label].is_a?(Hash)
+            attrs[:label] = {:title => attrs.delete(:label)}
+            add_css_class(attrs[:label], "choice")
+          end
+        end
+      end
+
       def clean_args!(attrs)
         new_attrs = attrs.dup
         new_attrs.delete(:li)
