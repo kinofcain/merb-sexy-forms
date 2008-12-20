@@ -7,6 +7,8 @@ require 'merb-core/tasks/merb'
 require 'date'
 require "spec/rake/spectask"
 
+require 'lib/merb-sexy-forms/merbtasks.rb'
+
 GEM_NAME = "merb-sexy-forms"
 GEM_VERSION = "0.0.2"
 AUTHOR = "Your Name"
@@ -28,7 +30,7 @@ spec = Gem::Specification.new do |s|
   s.homepage = HOMEPAGE
   s.add_dependency('merb', '>= 1.0.6.1')
   s.require_path = 'lib'
-  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,spec}/**/*")
+  s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,spec,assets}/**/*")
   
 end
 

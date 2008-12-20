@@ -1,0 +1,56 @@
+/*  This file can be overwriten by rake task - if you want to customize
+    styles try to overwrite selectors them in another file or make new
+    stylesheet
+*/
+form.sexy ul {
+  padding: 0px;
+}
+
+form.sexy label.main {
+  line-height: 1.5em;
+  color: #000;
+  font-weight: bold;
+}
+
+form.sexy ul li {
+  width: 97% !important;
+}
+
+form.sexy li {
+  clear: both;
+  display: block;
+  margin: 0;
+  padding: 5px 5px 2px 10px;
+}
+
+form.sexy ul li div input[type=text], form.sexy ul li div textarea,
+form.sexy ul li div input[type=password] {
+  width: 100%;
+  border-color:#7C7C7C #a2a2a2 #b2b2b2;
+  border-style: solid;
+  border-width: 1px;
+}
+
+form.sexy input[type=text], form.sexy textarea, form.sexy input[type=password] {
+  background: #FFFFFF url(/images/sexy_forms/fieldbg.gif) repeat-x scroll center top;
+}
+
+form.sexy ul li div textarea {
+  height: 9em;
+}
+
+form.sexy label.choice {
+  display: block;
+  line-height: 1.5em;
+  margin: -1.4em 0 0 25px;
+  padding: 0.185em 0 0.6em;
+  width: 88%;
+}
+
+input.checkbox, input.radio {
+  display:block;
+  line-height: 1.5em;
+  margin:0.6em 0 0 3px;
+  width: 15px;
+  height: 15px;
+}
