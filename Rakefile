@@ -10,7 +10,7 @@ require "spec/rake/spectask"
 require 'lib/merb-sexy-forms/merbtasks.rb'
 
 GEM_NAME = "merb-sexy-forms"
-GEM_VERSION = "0.0.2"
+GEM_VERSION = "0.0.3"
 AUTHOR = "Your Name"
 EMAIL = "Your Email"
 HOMEPAGE = "http://merbivore.com/"
