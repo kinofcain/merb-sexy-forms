@@ -11,8 +11,9 @@ if defined?(Merb::Plugins)
   end
   
   Merb::BootLoader.after_app_loads do
-    require 'lib/merb-sexy-forms/builder'
-    require 'lib/merb-sexy-forms/form'
+    dir = File.dirname(__FILE__) / 'merb-sexy-forms'
+    require dir + '/builder'
+    require dir + '/form'
   end
   
   Merb::Plugins.add_rakefiles "merb-sexy-forms/merbtasks"
