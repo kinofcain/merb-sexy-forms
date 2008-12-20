@@ -11,10 +11,10 @@ require 'lib/merb-sexy-forms/merbtasks.rb'
 
 GEM_NAME = "merb-sexy-forms"
 GEM_VERSION = "0.0.3"
-AUTHOR = "Your Name"
-EMAIL = "Your Email"
-HOMEPAGE = "http://merbivore.com/"
-SUMMARY = "Merb plugin that provides ..."
+AUTHOR = "Piotr Sarnacki"
+EMAIL = "drogus@gmail.com"
+HOMEPAGE = ""
+SUMMARY = "Merb plugin that provides extended builder for forms"
 
 spec = Gem::Specification.new do |s|
   s.rubyforge_project = 'merb'
