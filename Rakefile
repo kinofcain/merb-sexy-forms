@@ -8,7 +8,7 @@ require 'date'
 require "spec/rake/spectask"
 
 GEM_NAME = "merb-sexy-forms"
-GEM_VERSION = "0.0.1"
+GEM_VERSION = "0.0.2"
 AUTHOR = "Your Name"
 EMAIL = "Your Email"
 HOMEPAGE = "http://merbivore.com/"
