@@ -15,4 +15,15 @@ describe "form" do
     ret.should have_selector("form ul li label")
     ret.should have_selector("form ul li div input")
   end
+
+  it "should add 'choice' class to labels for checkboxes or radio buttons" do
+    ret = @c.render(:label_choice_class)
+    ret.should have_selector("form div label[for=checkbox].choice")
+    ret.should have_selector("form div label[for=radio].choice")
+  end
+
+  it "should not add 'choice' class to main labels" do
+    ret = @c.render(:label_choice_class)
+    ret.should_not have_selector("form label.choice.main")
+  end
 end
