@@ -1,1 +1,3 @@
 TODO:
+Add :required option.
+Add :description option - probably provided also with block to easily add more text.
