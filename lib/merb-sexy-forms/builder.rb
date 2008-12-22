@@ -19,45 +19,11 @@ module Merb::Helpers::SexyForm
       end
 
       def wrap_with_container(attrs = {}, content = "")
-        container = attrs.delete(:container)
-        wrapper = attrs.delete(:wrapper)
-
-        first = attrs.delete(:first)
-        method = attrs.delete(:method)
-
-        if first && (attrs[:id] || method)
-          if method
-            id = method ? "#{@name}_#{method}" : attrs[:id]
-          end
-          label_id = "#{id}_#{first[:value]}"
-        else
-          label_id = attrs[:id]
-        end
-
-        label = attrs.delete(:label)
-        if label && !label.is_a?(Hash)
-          label = {:label => {:title => label}}
-        end
-        if label.is_a?(Hash)
-          label[:label].merge!({:class => "main", :for => label_id})
-        end
-        label = label(label)
-
-        if wrapper == false
-          content = label + content
-        else
-          content = label + tag(:div, content, wrapper)
-        end
-
-        if container == false
-          content
-        else
-          container = container || {}
-          container.merge!(:id => "#{attrs[:id]}_container") if attrs[:id] and container[:id].blank?
-          container_tag = Merb::Plugins.config[:merb_sexy_forms][:container_tag]
-          tag(container_tag, content, container)
-        end
+        content = add_field_wrapper(content, attrs)
+        content = add_main_label(content, attrs)
+        content = add_container(content, attrs)
       end
+
 
       %w(text password file).each do |kind|
         self.class_eval <<-RUBY, __FILE__, __LINE__ + 1
@@ -141,6 +107,55 @@ module Merb::Helpers::SexyForm
         end
         super(attrs)
       end
+
+      def add_main_label(content, attrs)
+        first = attrs.delete(:first)
+        method = attrs.delete(:method)
+
+        if first && (attrs[:id] || method)
+          if method
+            id = method ? "#{@name}_#{method}" : attrs[:id]
+          end
+          label_for = "#{id}_#{first[:value]}"
+        else
+          label_for = attrs[:id]
+        end
+
+        label = attrs.delete(:label)
+        
+        if label && !label.is_a?(Hash)
+          label = {:label => {:title => label}}
+        end
+        if label.is_a?(Hash)
+          label[:label].merge!({:class => "main", :for => label_for})
+        end
+        label = label(label)
+
+        label + content
+      end
+
+      def add_container(content, attrs)
+        container = attrs.delete(:container)
+
+        if container == false
+          content
+        else
+          container = container || {}
+          container.merge!(:id => "#{attrs[:id]}_container") if attrs[:id] and container[:id].blank?
+          container_tag = Merb::Plugins.config[:merb_sexy_forms][:container_tag]
+          tag(container_tag, content, container)
+        end
+      end
+
+      def add_field_wrapper(content, attrs)
+        wrapper = attrs.delete(:wrapper)
+        if wrapper == false
+          content
+        else
+          tag(:div, content, wrapper)
+        end
+      end
+
     end
   end
 end
