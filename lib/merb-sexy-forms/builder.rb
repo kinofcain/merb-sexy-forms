@@ -2,15 +2,19 @@ module Merb::Helpers::SexyForm
   module Builder
     class Base < Merb::Helpers::Form::Builder::ResourcefulFormWithErrors
       def form(attrs = {}, &blk)
-        ul_options = attrs.delete(:ul)
         add_css_class(attrs, "sexy")
         super(attrs) do
           captured = @origin.capture(&blk)
-          if Merb::Plugins.config[:merb_sexy_forms][:container_tag] == "li"
-            tag(:ul, captured, ul_options)
-          else
-            captured
-          end
+          add_main_container(captured, attrs)
+        end
+      end
+
+      def add_main_container(content, attrs)
+        ul_options = attrs.delete(:ul)
+        if Merb::Plugins.config[:merb_sexy_forms][:container_tag] == "li"
+          tag(:ul, content, ul_options)
+        else
+          content
         end
       end
 
@@ -115,7 +119,7 @@ module Merb::Helpers::SexyForm
 
       def clean_args!(attrs)
         new_attrs = attrs.dup
-        new_attrs.delete(:li)
+        new_attrs.delete(:wrapper)
         new_attrs.delete(:container)
         new_attrs
       end

@@ -7,6 +7,11 @@ describe "form" do
     @container = Merb::Plugins.config[:merb_sexy_forms][:container_tag]
   end
 
+  it "should not add ul, container or wrapper attrs" do
+    ret = @c.render(:additional_options)
+    ret.should_not have_selector("*[container], *[ul], *[wrapper]")
+  end
+
   it "should add containers" do
     ret = @c.render(:basic)
     ret.should have_selector("form #{@container} > label")
