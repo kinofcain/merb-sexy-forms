@@ -1,13 +1,26 @@
 require File.dirname(__FILE__) + '/spec_helper'
 
-describe "form" do
+describe "sexy_form" do
 
   before :each do
     @c = SexyFormSpecs.new(Merb::Request.new({}))
     @container = Merb::Plugins.config[:merb_sexy_forms][:container_tag]
   end
 
-  it "should not add ul, container or wrapper attrs" do
+  it "should insert some html after and before field" do
+    ret = @c.render(:before_after_field)
+    ret.should have_selector("form span.before")
+    ret.should have_selector("form span.after")
+
+    ret.should_not have_selector("*[after], *[before]")
+  end
+
+  it "should append attributes to field" do
+    ret = @c.render(:append_attributes)
+    ret.should have_selector("form input#id.class")
+  end
+
+  it "should not add options attrs" do
     ret = @c.render(:additional_options)
     ret.should_not have_selector("*[container], *[ul], *[wrapper]")
   end

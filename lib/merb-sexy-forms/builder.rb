@@ -19,6 +19,7 @@ module Merb::Helpers::SexyForm
       end
 
       def wrap_with_container(attrs = {}, content = "")
+        content = add_html_to_field(content, attrs)
         content = add_field_wrapper(content, attrs)
         content = add_main_label(content, attrs)
         content = add_container(content, attrs)
@@ -87,6 +88,8 @@ module Merb::Helpers::SexyForm
         new_attrs = attrs.dup
         new_attrs.delete(:wrapper)
         new_attrs.delete(:container)
+        new_attrs.delete(:before)
+        new_attrs.delete(:after)
         new_attrs
       end
 
@@ -156,6 +159,18 @@ module Merb::Helpers::SexyForm
         end
       end
 
+      def add_html_to_field(content, attrs)
+        before = attrs.delete(:before)
+        after = attrs.delete(:after)
+
+        if before
+          content = before + content
+        end
+        if after
+          content = content + after
+        end
+        content
+      end
     end
   end
 end
