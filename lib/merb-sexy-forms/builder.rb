@@ -6,13 +6,17 @@ module Merb::Helpers::SexyForm
         add_css_class(attrs, "sexy")
         super(attrs) do
           captured = @origin.capture(&blk)
-          tag(:ul, captured, ul_options)
+          if Merb::Plugins.config[:merb_sexy_forms][:container_tag] == "li"
+            tag(:ul, captured, ul_options)
+          else
+            captured
+          end
         end
       end
 
       def wrap_with_container(attrs = {}, content = "")
-        li = attrs.delete(:li)
         container = attrs.delete(:container)
+        wrapper = attrs.delete(:wrapper)
 
         first = attrs.delete(:first)
         method = attrs.delete(:method)
@@ -35,18 +39,19 @@ module Merb::Helpers::SexyForm
         end
         label = label(label)
 
-        if container == false
+        if wrapper == false
           content = label + content
         else
-          content = label + tag(:div, content, container)
+          content = label + tag(:div, content, wrapper)
         end
 
-        if li == false
+        if container == false
           content
         else
-          li = li || {}
-          li.merge!(:id => "#{attrs[:id]}_container") if attrs[:id] and li[:id].blank?
-          tag(:li, content, li)
+          container = container || {}
+          container.merge!(:id => "#{attrs[:id]}_container") if attrs[:id] and container[:id].blank?
+          container_tag = Merb::Plugins.config[:merb_sexy_forms][:container_tag]
+          tag(container_tag, content, container)
         end
       end
 
