@@ -101,12 +101,14 @@ module Merb::Helpers::SexyForm
       end
 
       def process_form_attrs(attrs)
-        attrs[:id] = "#{@name}" unless attrs[:id] || @name.nil?
+        attrs[:id] = "#{@name}" unless attrs[:id] || @obj.nil?
 
-        if (@obj.respond_to?(:new_record?) && !@obj.new_record?) || (@obj.respond_to?(:new?) && !@obj.new?)
-          add_css_class(attrs, "edit")
-        else
-          add_css_class(attrs, "new")
+        if @obj
+          if (@obj.respond_to?(:new_record?) && !@obj.new_record?) || (@obj.respond_to?(:new?) && !@obj.new?)
+            add_css_class(attrs, "edit")
+          else
+            add_css_class(attrs, "new")
+          end
         end
         super(attrs)
       end
@@ -116,7 +118,7 @@ module Merb::Helpers::SexyForm
         method = attrs.delete(:method)
 
         if first && (attrs[:id] || method)
-          if method
+          if method && @obj
             id = method ? "#{@name}_#{method}" : attrs[:id]
           end
           label_for = "#{id}_#{first[:value]}"
