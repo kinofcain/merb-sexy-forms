@@ -28,7 +28,8 @@ module Merb::Helpers::SexyForm
 
       %w(text password file).each do |kind|
         self.class_eval <<-RUBY, __FILE__, __LINE__ + 1
-          def unbound_#{kind}_field(attrs = {})
+          def unbound_#{kind}_field(attrs = {}, &blk)
+            yield(attrs) if block_given?
             label = attrs.delete(:label)
             wrap_with_container(attrs.merge(:label => label), super(clean_args!(attrs)))
           end
@@ -36,40 +37,48 @@ module Merb::Helpers::SexyForm
       end
 
       def unbound_check_box(attrs = {})
+        yield(attrs) if block_given?
         update_label_options(attrs, "radio")
         wrap_with_container(attrs.merge(:label => nil),
             super(clean_args!(attrs)))
       end
 
       def unbound_radio_button(attrs = {})
+        yield(attrs) if block_given?
         update_label_options(attrs, "radio")
         wrap_with_container(attrs.merge(:label => nil),
             super(clean_args!(attrs)))
       end
 
       def bound_radio_group(method, arr, global_attrs = {})
+        yield(attrs) if block_given?
         first = arr.first
         wrap_with_container(global_attrs.merge(:first => first, :method => method), super(method, arr))
       end
 
       def unbound_radio_group(arr, global_attrs = {})
+        yield(attrs) if block_given?
         wrap_with_container(global_attrs, super(arr))
       end
 
       def unbound_select(attrs = {})
+        yield(attrs) if block_given?
         wrap_with_container(attrs, super(clean_args!(attrs)))
       end
 
       def unbound_text_area(contents, attrs = {})
+        yield(attrs) if block_given?
         label = attrs.delete(:label)
         wrap_with_container(attrs.merge(:label => label), super(clean_args!(attrs)))
       end
 
       def button(contents, attrs = {})
+        yield(attrs) if block_given?
         wrap_with_container(attrs, super(contents, clean_args!(attrs)))
       end
 
       def submit(value, attrs = {})
+        yield(attrs) if block_given?
         wrap_with_container(attrs, super(value, clean_args!(attrs)))
       end
 

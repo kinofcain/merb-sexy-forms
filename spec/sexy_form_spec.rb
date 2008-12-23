@@ -7,6 +7,17 @@ describe "sexy_form" do
     @container = Merb::Plugins.config[:merb_sexy_forms][:container_tag]
   end
 
+  it "should allow to pass block to any field and set hash contents inside" do
+    ret = @c.render(:blocks)
+    ret.should have_selector("form input[type=text].text_class")
+    ret.should have_selector("form input[type=submit].submit_class")
+    ret.should have_selector("form button.button_class")
+    ret.should have_selector("form input[type=radio].radio_class")
+    ret.should have_selector("form input[type=checkbox].checkbox_class")
+    ret.should have_selector("form select.select_class")
+    ret.should have_selector("form textarea.textarea_class")
+  end
+
   it "should insert some html after and before field" do
     ret = @c.render(:before_after_field)
     ret.should have_selector("form span.before")
@@ -59,3 +70,5 @@ describe "sexy_form" do
     ret.should_not have_selector("form label.choice.main")
   end
 end
+
+
