@@ -33,6 +33,11 @@ module Merb::Helpers::SexyForm
             label = attrs.delete(:label)
             wrap_with_container(attrs.merge(:label => label), super(clean_args!(attrs)))
           end
+
+          def bound_#{kind}_field(method, attrs = {}, &blk)
+            yield(attrs) if block_given?
+            super
+          end
         RUBY
       end
 
@@ -43,11 +48,21 @@ module Merb::Helpers::SexyForm
             super(clean_args!(attrs)))
       end
 
+      def bound_check_box(method, attrs = {}, &blk)
+        yield(attrs) if block_given?
+        super
+      end
+
       def unbound_radio_button(attrs = {})
         yield(attrs) if block_given?
         update_label_options(attrs, "radio")
         wrap_with_container(attrs.merge(:label => nil),
             super(clean_args!(attrs)))
+      end
+
+      def bound_radio_button(method, attrs = {}, &blk)
+        yield(attrs) if block_given?
+        super
       end
 
       def bound_radio_group(method, arr, global_attrs = {})
@@ -66,10 +81,20 @@ module Merb::Helpers::SexyForm
         wrap_with_container(attrs, super(clean_args!(attrs)))
       end
 
+      def bound_select(method, attrs = {}, &blk)
+        yield(attrs) if block_given?
+        super
+      end
+
       def unbound_text_area(contents, attrs = {})
         yield(attrs) if block_given?
         label = attrs.delete(:label)
         wrap_with_container(attrs.merge(:label => label), super(clean_args!(attrs)))
+      end
+
+      def bound_text_area(method, attrs = {}, &blk)
+        yield(attrs) if block_given?
+        super
       end
 
       def button(contents, attrs = {})
