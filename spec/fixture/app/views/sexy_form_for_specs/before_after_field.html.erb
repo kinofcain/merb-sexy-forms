@@ -1,0 +1,6 @@
+<%= sexy_form_for(@obj, :ul => {:class => "ul_class"}) do %>
+  <%= text_field :foo,
+          :label => "Label: ", 
+          :before => '<span class="before"></span>', 
+          :after => '<span class="after"></span>' %>
+<% end =%>

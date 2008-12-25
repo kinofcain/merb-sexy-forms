@@ -1,0 +1,2 @@
+class SexyFormForSpecs < SpecController
+end

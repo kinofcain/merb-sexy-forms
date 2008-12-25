@@ -1,0 +1,23 @@
+<%= sexy_form_for(@obj, :ul => {:class => "ul_class"}) do %>
+  <%= text_field :foo do |c| %>
+    <% c[:class] = "text_class" %>
+  <% end =%>
+  <%= text_area :foo do |c| %>
+    <% c[:class] = "textarea_class" %>
+  <% end =%>
+  <%= check_box :baz do |c|%>
+    <% c[:class] = "checkbox_class" %>
+  <% end =%>
+  <%= radio_button :bat do |c|%>
+    <% c[:class] = "radio_class" %>
+  <% end =%>
+  <%= select :bar do |c|%>
+    <% c[:class] = "select_class" %>
+  <% end =%>
+  <%= button "contents" do |c| %>
+    <% c[:class] = "button_class" %>
+  <% end =%>
+  <%= submit "contents" do |c| %>
+    <% c[:class] = "submit_class" %>
+  <% end =%>
+<% end =%>

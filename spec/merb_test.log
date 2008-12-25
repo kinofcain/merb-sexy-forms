@@ -1,1 +1,94 @@
 Sat, 20 Dec 2008 13:41:20 GMT  ~  info  ~  Logfile created
+ ~ Could not load ./spec/fixture/app/views/sexy_form_for.rb:
+
+uninitialized constant SpecController - (NameError)
+
+./spec/fixture/app/views/sexy_form_for.rb:1
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:863:in `load_file'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1018:in `load_classes_with_requirements'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1015:in `each'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1015:in `load_classes_with_requirements'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:903:in `load_classes'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:641:in `run'
+/usr/lib/ruby/gems/1.8/gems/extlib-0.9.9/lib/extlib/dictionary.rb:268:in `each'
+/usr/lib/ruby/gems/1.8/gems/extlib-0.9.9/lib/extlib/dictionary.rb:268:in `each'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:639:in `run'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:99:in `run'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/server.rb:172:in `bootup'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/server.rb:42:in `start'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core.rb:170:in `start'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core.rb:183:in `start_environment'
+./spec/spec_helper.rb:18
+./spec/sexy_form_for_spec.rb:1:in `require'
+./spec/sexy_form_for_spec.rb:1
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:14:in `load'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:14:in `load_files'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:13:in `each'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:13:in `load_files'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/options.rb:98:in `run_examples'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/command_line.rb:10:in `run'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/bin/spec:4
+ ~ Could not load ./spec/fixture/app/views/sexy_form_for.rb:
+
+uninitialized constant SpecController - (NameError)
+
+./spec/fixture/app/views/sexy_form_for.rb:1
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:863:in `load_file'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1018:in `load_classes_with_requirements'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1015:in `each'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1015:in `load_classes_with_requirements'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:903:in `load_classes'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:641:in `run'
+/usr/lib/ruby/gems/1.8/gems/extlib-0.9.9/lib/extlib/dictionary.rb:268:in `each'
+/usr/lib/ruby/gems/1.8/gems/extlib-0.9.9/lib/extlib/dictionary.rb:268:in `each'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:639:in `run'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:99:in `run'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/server.rb:172:in `bootup'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/server.rb:42:in `start'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core.rb:170:in `start'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core.rb:183:in `start_environment'
+./spec/spec_helper.rb:18
+./spec/sexy_form_for_spec.rb:1:in `require'
+./spec/sexy_form_for_spec.rb:1
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:14:in `load'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:14:in `load_files'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:13:in `each'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:13:in `load_files'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/options.rb:98:in `run_examples'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/command_line.rb:10:in `run'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/bin/spec:4
+ ~ Could not load ./spec/fixture/app/views/sexy_form_for.rb:
+
+uninitialized constant SpecController - (NameError)
+
+./spec/fixture/app/views/sexy_form_for.rb:1
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:863:in `load_file'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1018:in `load_classes_with_requirements'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1015:in `each'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:1015:in `load_classes_with_requirements'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:903:in `load_classes'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:641:in `run'
+/usr/lib/ruby/gems/1.8/gems/extlib-0.9.9/lib/extlib/dictionary.rb:268:in `each'
+/usr/lib/ruby/gems/1.8/gems/extlib-0.9.9/lib/extlib/dictionary.rb:268:in `each'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:639:in `run'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/bootloader.rb:99:in `run'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/server.rb:172:in `bootup'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core/server.rb:42:in `start'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core.rb:170:in `start'
+/usr/lib/ruby/gems/1.8/gems/merb-core-1.0.6.1/lib/merb-core.rb:183:in `start_environment'
+./spec/spec_helper.rb:18
+./spec/sexy_form_for_spec.rb:1:in `require'
+./spec/sexy_form_for_spec.rb:1
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:14:in `load'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:14:in `load_files'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:13:in `each'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/example_group_runner.rb:13:in `load_files'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/options.rb:98:in `run_examples'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/lib/spec/runner/command_line.rb:10:in `run'
+/usr/lib/ruby/gems/1.8/gems/rspec-1.1.11/bin/spec:4
