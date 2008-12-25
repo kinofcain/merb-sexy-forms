@@ -1,3 +1,5 @@
 TODO:
 Add :required option.
-Add :description option - probably provided also with block to easily add more text.
+Add :description option - probably provided also with block to easily add more text
+Add error support - displaying errors "near" fields and error class in containers with fields with error.
+
