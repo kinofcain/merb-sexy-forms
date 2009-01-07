@@ -69,6 +69,11 @@ describe "sexy_form" do
     ret = @c.render(:label_choice_class)
     ret.should_not have_selector("form label.choice.main")
   end
+
+  it "should generate main labels if label option is provided" do
+    ret = @c.render(:basic)
+    ret.should have_selector("label.main")
+  end
 end
 
 

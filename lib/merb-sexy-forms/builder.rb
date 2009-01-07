@@ -165,9 +165,12 @@ module Merb::Helpers::SexyForm
         if label && !label.is_a?(Hash)
           label = {:label => {:title => label}}
         end
+
         if label.is_a?(Hash)
-          label[:label].merge!({:class => "main", :for => label_for})
+          label = label[:label]
+          label.merge!({:class => "main", :for => label_for})
         end
+
         label = label(label)
 
         label + content
