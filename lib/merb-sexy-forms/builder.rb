@@ -89,7 +89,7 @@ module Merb::Helpers::SexyForm
       def unbound_text_area(contents, attrs = {})
         yield(attrs) if block_given?
         label = attrs.delete(:label)
-        wrap_with_container(attrs.merge(:label => label), super(clean_args!(attrs)))
+        wrap_with_container(attrs.merge(:label => label), super(contents, clean_args!(attrs)))
       end
 
       def bound_text_area(method, attrs = {}, &blk)

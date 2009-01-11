@@ -75,6 +75,12 @@ describe "sexy_form_for" do
     ret = @c.render(:basic)
     ret.should have_selector("label.main[for=fake_model_foo]")
   end
+
+  it "should generate textarea with given text" do
+    ret = @c.render(:textarea)
+    ret.should =~ /foowee/
+    ret.should have_selector("form textarea")
+  end
 end
 
 

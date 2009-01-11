@@ -74,6 +74,12 @@ describe "sexy_form" do
     ret = @c.render(:basic)
     ret.should have_selector("label.main")
   end
+
+  it "should add text for text_area" do
+    ret = @c.render(:textarea)
+    ret.should =~ /foowee/
+    ret.should have_selector("form textarea")
+  end
 end
 
 
