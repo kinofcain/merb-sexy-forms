@@ -78,7 +78,8 @@ module Merb::Helpers::SexyForm
 
       def unbound_select(attrs = {})
         yield(attrs) if block_given?
-        wrap_with_container(attrs, super(clean_args!(attrs)))
+        label = attrs.delete(:label)
+        wrap_with_container(attrs.merge(:label => label), super(clean_args!(attrs)))
       end
 
       def bound_select(method, attrs = {}, &blk)
@@ -198,6 +199,8 @@ module Merb::Helpers::SexyForm
         if wrapper == false
           content
         else
+          wrapper ||= {}
+          add_css_class(wrapper, "field")
           tag(:div, content, wrapper)
         end
       end

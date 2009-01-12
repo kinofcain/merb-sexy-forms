@@ -28,6 +28,18 @@ class FakeModel
     FakeErrors.new(self)
   end
   
+  def id
+    @id
+  end
+
+  def title
+    "title"
+  end
+
+  def initialize(id = 1)
+    @id = id
+  end
+
   def foo
     "foowee"
   end

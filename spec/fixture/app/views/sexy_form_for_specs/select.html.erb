@@ -1,0 +1,7 @@
+<%= sexy_form_for(@obj) do %>
+  <%= select :article_id, :collection => @collection, 
+      :text_method => :title, 
+      :value_method => :id, 
+      :label => "Label",
+      :selected => "1" %>
+<% end =%>

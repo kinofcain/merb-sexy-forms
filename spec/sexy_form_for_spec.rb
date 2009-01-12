@@ -81,6 +81,18 @@ describe "sexy_form_for" do
     ret.should =~ /foowee/
     ret.should have_selector("form textarea")
   end
+
+  it "should add label for select only once" do
+    ret = @c.render(:select)
+    @c.instance_variable_set(:@collection, [FakeModel.new, FakeModel.new(2)])
+    ret.should_not have_selector("form div.field label")
+    ret.should have_selector("form label.main")
+  end
+
+  it "should add field class to field div" do
+    ret = @c.render(:basic)
+    ret.should have_selector("form div.field")
+  end
 end
 
 
