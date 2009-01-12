@@ -108,6 +108,10 @@ module Merb::Helpers::SexyForm
       end
 
       private
+      def considered_true?(value)
+        value && value != "false" && value != "0" && value != 0
+      end
+
       def update_label_options(attrs, type)
         case type
         when "radio", "checkbox"
