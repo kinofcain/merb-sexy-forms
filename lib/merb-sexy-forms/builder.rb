@@ -188,6 +188,7 @@ module Merb::Helpers::SexyForm
           content
         else
           container = container || {}
+          add_css_class(container, "container")
           container.merge!(:id => "#{attrs[:id]}_container") if attrs[:id] and container[:id].blank?
           container_tag = Merb::Plugins.config[:merb_sexy_forms][:container_tag]
           tag(container_tag, content, container)
@@ -200,7 +201,7 @@ module Merb::Helpers::SexyForm
           content
         else
           wrapper ||= {}
-          add_css_class(wrapper, "field")
+          add_css_class(wrapper, "field wrapper")
           tag(:div, content, wrapper)
         end
       end

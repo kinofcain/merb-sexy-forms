@@ -89,9 +89,14 @@ describe "sexy_form_for" do
     ret.should have_selector("form label.main")
   end
 
-  it "should add field class to field div" do
+  it "should add field and wrapper classes to field div" do
     ret = @c.render(:basic)
-    ret.should have_selector("form div.field")
+    ret.should have_selector("form div.field.wrapper")
+  end
+
+  it "should add container class to container" do
+    ret = @c.render(:basic)
+    ret.should have_selector("form div.container#fake_model_foo_container")
   end
 end
 
